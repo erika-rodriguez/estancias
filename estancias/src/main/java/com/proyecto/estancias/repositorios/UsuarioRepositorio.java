@@ -2,6 +2,6 @@
 package com.proyecto.estancias.repositorios;
 
 
-public class RepositorioUsuario {
+public class UsuarioRepositorio {
     
 }

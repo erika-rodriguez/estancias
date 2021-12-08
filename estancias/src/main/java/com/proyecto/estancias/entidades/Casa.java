@@ -16,7 +16,7 @@ public class Casa {
     @GenericGenerator(name="uuid",strategy = "uuid2")
     private String id;
     
-    private String Calle;
+    private String calle;
     private int numero;
     private String codPostal;
     private String ciudad;
@@ -27,12 +27,6 @@ public class Casa {
     private int maxDias;
     private double precio;
     private String tipoVivienda;
-  /**
-    Falta encapsular foto
-    
-    */
-    
-// private Foto foto; 
 
     /**
      * @return the id
@@ -49,17 +43,17 @@ public class Casa {
     }
 
     /**
-     * @return the Calle
+     * @return the calle
      */
     public String getCalle() {
-        return Calle;
+        return calle;
     }
 
     /**
-     * @param Calle the Calle to set
+     * @param calle the calle to set
      */
-    public void setCalle(String Calle) {
-        this.Calle = Calle;
+    public void setCalle(String calle) {
+        this.calle = calle;
     }
 
     /**
@@ -133,17 +127,17 @@ public class Casa {
     }
 
     /**
-     * @return the fecgaHasta
+     * @return the fechaHasta
      */
     public Date getFechaHasta() {
         return fechaHasta;
     }
 
     /**
-     * @param fecgaHasta the fecgaHasta to set
+     * @param fechaHasta the fechaHasta to set
      */
-    public void setFechaHasta(Date fecgaHasta) {
-        this.fechaHasta = fecgaHasta;
+    public void setFechaHasta(Date fechaHasta) {
+        this.fechaHasta = fechaHasta;
     }
 
     /**
@@ -201,7 +195,12 @@ public class Casa {
     public void setTipoVivienda(String tipoVivienda) {
         this.tipoVivienda = tipoVivienda;
     }
+  /**
+    Falta encapsular foto
     
+    */
     
-    
+// private Foto foto; 
+
+ 
 }
