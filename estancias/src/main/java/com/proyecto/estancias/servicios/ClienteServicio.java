@@ -1,6 +1,7 @@
 package com.proyecto.estancias.servicios;
 
 import com.proyecto.estancias.entidades.Cliente;
+import com.proyecto.estancias.errores.ErrorServicio;
 import com.proyecto.estancias.repositorios.ClienteRepositorio;
 import java.util.List;
 import java.util.Optional;

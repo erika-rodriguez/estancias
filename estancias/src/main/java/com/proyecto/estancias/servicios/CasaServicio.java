@@ -33,7 +33,7 @@ public class CasaServicio {
     private String tipoVivienda;
      */
     @Transactional
-   public void agregarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda){
+   public void agregarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda) throws Exception{
        
        validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
        
@@ -55,7 +55,7 @@ public class CasaServicio {
    }
    
       @Transactional
-   public void modificarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda){
+   public void modificarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda) throws Exception{
        
        validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
        
@@ -114,7 +114,7 @@ public class CasaServicio {
        if (calle.isEmpty() || calle == null || calle.contains("     ")) {
             throw new Exception("La calle ingresada no es valida");
         }
-       if(numero < 0){ //null no me deja validar ya que el valor es int en lugar de integer
+       if (numero < 0){ //null no me deja validar ya que el valor es int en lugar de integer
             throw new Exception("El numero ingresado no es valido");
         }
        if (codPostal.isEmpty() || codPostal == null || codPostal.contains("     ")) {
