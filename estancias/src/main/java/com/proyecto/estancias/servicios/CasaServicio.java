@@ -10,28 +10,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 @Service
 public class CasaServicio {
-    
+    /*
     @Autowired
     private CasaServicio casaServicio;
     
     @Autowired
     private CasaRepositorio casaRepositorio;
-    /**
-     * String id
-     * private String calle;
-    private int numero;
-    private String codPostal;
-    private String ciudad;
-    private String pais;
-    private Date fechaDesde;
-    private Date fechaHasta;
-    private int minDias;
-    private int maxDias;
-    private double precio;
-    private String tipoVivienda;
-     */
+    
     @Transactional
    public void agregarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda) throws Exception{
        
@@ -128,4 +117,6 @@ public class CasaServicio {
         }
        //falta terminar de validar
    }
+*/
 }
+

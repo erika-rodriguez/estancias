@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.estancias.servicios;
+package com.proyecto.estancias.controladores;
 
-/**
- *
- * @author Carlitos Rodriguez
- */
-public class servicios {
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class FamiliaControlador {
     
 }
