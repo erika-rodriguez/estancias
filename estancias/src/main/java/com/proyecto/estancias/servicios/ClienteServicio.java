@@ -20,7 +20,7 @@ public class ClienteServicio {
     @Transactional
     public void resgistrar(String nombre, String calle, int numero, String codPostal, String ciudad, String pais, String email) throws ErrorServicio {
 
-        validar(nombre, calle, numero, ciudad, pais, email);
+        validar(nombre, calle, numero, codPostal, ciudad, pais, email);
         Cliente cliente = new Cliente();
 
         Optional<Cliente> respuesta = cr.fyndByEmail(email);
@@ -50,7 +50,7 @@ public class ClienteServicio {
 
     @Transactional
     public void modificarCliente(String id, String nombre, String calle, int numero, String codPostal, String ciudad, String pais, String email) throws ErrorServicio {
-        validar(nombre, calle, numero, ciudad, pais, email);
+        validar(nombre, calle, numero, codPostal, ciudad, pais, email);
         
         Optional<Cliente> respuesta = cr.findById(id);
         if (respuesta.isPresent()) {
@@ -76,7 +76,7 @@ public class ClienteServicio {
 
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public Cliente getOne(String id) {
         return cr.getOne(id);
     }
@@ -124,7 +124,7 @@ public class ClienteServicio {
         return clientes;
     }
     
-    private void validar(String nombre, String calle, int numero, String codPostal, String ciudad, String pais) throws ErrorServicio {
+    private void validar(String nombre, String calle, int numero, String codPostal, String ciudad, String pais, String email) throws ErrorServicio {
         if (nombre == null || nombre.isEmpty()) {
             throw new ErrorServicio("El nombre del Cliente no puede ser nulo");
 
