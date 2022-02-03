@@ -5,29 +5,16 @@
  */
 package com.proyecto.estancias.repositorios;
 
-import com.proyecto.estancias.entidades.Estancia;
-import java.util.List;
-import java.util.Optional;
+import com.proyecto.estancias.entidades.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Erika92
- */
 @Repository
-public interface RepositorioEstancia extends JpaRepository<Estancia, String>{
-
-  
- /*
-    @Query("SELECT c FROM foto c where c.id = :id")
-    public List<Estancia> ListarEstancias();
+public interface UsuarioRepositorio extends JpaRepository<Usuario, String> {
     
+ @Query("SELECT c FROM Usuario c WHERE c.mail = :mail")
+    public Usuario buscarPorMail(@Param("mail") String mail);
     
-    @Query("SELECT c FROM foto c WHERE c.id = :id")
-    public Estancia buscarPorId(@Param("id")String id);
-
-*/
 }

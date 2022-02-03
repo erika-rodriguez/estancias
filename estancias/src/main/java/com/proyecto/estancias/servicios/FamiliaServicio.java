@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.estancias.repositorios;
+package com.proyecto.estancias.servicios;
 
 /**
  *
  * @author familia
  */
-public class RepositorioComentario {
+public class FamiliaServicio {
+    
     
 }
