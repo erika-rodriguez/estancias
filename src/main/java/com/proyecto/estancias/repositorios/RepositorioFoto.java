@@ -21,15 +21,21 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RepositorioFoto extends JpaRepository<Foto, String>{
+<<<<<<< HEAD:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 <<<<<<< HEAD:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 /*
 =======
+=======
+>>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 <<<<<<< HEAD
   /*
 =======
   
 >>>>>>> df7ac4c3501f2425b302f07f940816f76f04462c
+<<<<<<< HEAD:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 >>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
+=======
+>>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
     @Query("SELECT c FROM foto c")
     public List<Foto> ListarFotos();
     
@@ -38,13 +44,19 @@ public interface RepositorioFoto extends JpaRepository<Foto, String>{
     public Foto buscarPorId(@Param("id")String id);
 */
     
+<<<<<<< HEAD:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 <<<<<<< HEAD:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
    
 =======
+=======
+>>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 <<<<<<< HEAD
    */ 
 =======
    
 >>>>>>> df7ac4c3501f2425b302f07f940816f76f04462c
+<<<<<<< HEAD:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 >>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
+=======
+>>>>>>> e047d9aec34f7a298ed337a0e11c109d999568a1:estancias/src/main/java/com/proyecto/estancias/repositorios/RepositorioFoto.java
 }
