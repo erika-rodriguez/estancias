@@ -7,6 +7,7 @@ package com.proyecto.estancias.repositorios;
 
 import com.proyecto.estancias.entidades.Estancia;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -18,10 +19,15 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface RepositorioEstancia extends JpaRepository<Estancia, String>{
-    @Query("SELECT c FROM foto c")
+
+  
+ /*
+    @Query("SELECT c FROM foto c where c.id = :id")
     public List<Estancia> ListarEstancias();
     
     
     @Query("SELECT c FROM foto c WHERE c.id = :id")
     public Estancia buscarPorId(@Param("id")String id);
+
+*/
 }
