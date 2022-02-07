@@ -10,32 +10,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
+
 @Service
 public class CasaServicio {
-    
-    //@Autowired
-    //private CasaServicio casaServicio;
+    /*
+    @Autowired
+    private CasaServicio casaServicio;
     
     @Autowired
     private CasaRepositorio casaRepositorio;
-    /**
-     * String id
-     * private String calle;
-    private int numero;
-    private String codPostal;
-    private String ciudad;
-    private String pais;
-    private Date fechaDesde;
-    private Date fechaHasta;
-    private int minDias;
-    private int maxDias;
-    private double precio;
-    private String tipoVivienda;
-     */
+    
     @Transactional
-   public void agregarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda){
+   public void agregarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda) throws Exception{
        
-       //validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
+       validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
        
        Casa casa=new Casa();
        
@@ -55,9 +44,9 @@ public class CasaServicio {
    }
    
       @Transactional
-   public void modificarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda){
+   public void modificarCasa(String calle,int numero,String codPostal,String ciudad,String pais,Date fechaDesde,Date fechaHasta, int minDias,int maxDias,double precio, String tipoVivienda) throws Exception{
        
-       //validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
+       validarCasa(calle,numero,codPostal,ciudad,pais,fechaDesde,fechaHasta,minDias,maxDias,precio, tipoVivienda);
        
        Casa casa=new Casa();
        
@@ -114,7 +103,7 @@ public class CasaServicio {
        if (calle.isEmpty() || calle == null || calle.contains("     ")) {
             throw new Exception("La calle ingresada no es valida");
         }
-       if(numero < 0){ //null no me deja validar ya que el valor es int en lugar de integer
+       if (numero < 0){ //null no me deja validar ya que el valor es int en lugar de integer
             throw new Exception("El numero ingresado no es valido");
         }
        if (codPostal.isEmpty() || codPostal == null || codPostal.contains("     ")) {
@@ -128,4 +117,6 @@ public class CasaServicio {
         }
        //falta terminar de validar
    }
+*/
 }
+

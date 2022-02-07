@@ -4,30 +4,23 @@
  * and open the template in the editor.
  */
 package com.proyecto.estancias.repositorios;
-
-import com.proyecto.estancias.entidades.Estancia;
+import com.proyecto.estancias.entidades.Familia;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-/**
- *
- * @author Erika92
- */
+
 @Repository
-public interface RepositorioEstancia extends JpaRepository<Estancia, String>{
+public interface FamiliaRepositorio extends JpaRepository<Familia, String> {    
+    /*
+     @Query("SELECT c FROM familia c")
+    public List<Familia> ListarFamilias();
 
-  
- 
-    @Query("SELECT c FROM foto c where c.id = :id")
-    public List<Estancia> ListarEstancias();
     
     
-    @Query("SELECT c FROM foto c WHERE c.id = :id")
-    public Estancia buscarPorId(@Param("id")String id);
-
-
+    @Query("SELECT c FROM familia c WHERE c.id = :id")
+    public Familia buscarPorId(@Param("id")String id);
+*/
 }

@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.estancias.errores;
+package com.proyecto.estancias.controladores;
 
-/**
- *
- * @author Erika92
- */
-public class ErrorServicio extends Exception{
-    public ErrorServicio(String mensaje){
-        super(mensaje);
-    }
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class FamiliaControlador {
+    
 }

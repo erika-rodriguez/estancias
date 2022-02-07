@@ -21,71 +21,71 @@ import com.proyecto.estancias.repositorios.RepositorioEstancia;
  */
 @Service
 public class EstanciaServicio {
+
     @Autowired
     private RepositorioEstancia estanciaRepositorio;
-    
+
     @Transactional
-    public void crearEstancia(String huesped, Date fechaDesde,Date fechaHasta) throws ErrorServicio{
+    public void crearEstancia(String huesped, Date fechaDesde, Date fechaHasta) throws ErrorServicio {
         validar(fechaDesde, fechaHasta, huesped);
-        Estancia estancia=new Estancia();
+        Estancia estancia = new Estancia();
         estancia.setHuesped(huesped);
-        estancia.setFechaDesde(fechaDesde); 
+        estancia.setFechaDesde(fechaDesde);
         estancia.setFechaHasta(fechaHasta);
-        
+
         estanciaRepositorio.save(estancia);
     }
-    
-    
+
     @Transactional
-    public void modificarEstancia(String id, String huesped, Date fechaDesde,Date fechaHasta) throws ErrorServicio{
+    public void modificarEstancia(String id, String huesped, Date fechaDesde, Date fechaHasta) throws ErrorServicio {
         validar(fechaDesde, fechaHasta, huesped);
-        Estancia estancia=estanciaRepositorio.buscarPorId(id);
-        estancia.setHuesped(huesped);
-        estancia.setFechaDesde(fechaDesde); 
-        estancia.setFechaHasta(fechaHasta);
-        
-        estanciaRepositorio.save(estancia);  
-}
-    
-    
-    @Transactional
-    public void eliminarEstancia(String id) throws ErrorServicio{
-        Optional<Estancia> respuesta=estanciaRepositorio.findById(id);
+
+        Optional<Estancia> respuesta = estanciaRepositorio.findById(id);
         if (respuesta.isPresent()) {
-            Estancia estancia=respuesta.get();            
-            estanciaRepositorio.delete(estancia);
+            Estancia estancia = respuesta.get();
+            estancia.setHuesped(huesped);
+            estancia.setFechaDesde(fechaDesde);
+            estancia.setFechaHasta(fechaHasta);
+            estanciaRepositorio.save(estancia);
         }
-        else {
-            throw new ErrorServicio ("No se encontro la estancia solicitada");
+
+        
+    }
+
+    @Transactional
+    public void eliminarEstancia(String id) throws ErrorServicio {
+        Optional<Estancia> respuesta = estanciaRepositorio.findById(id);
+        if (respuesta.isPresent()) {
+            Estancia estancia = respuesta.get();
+            estanciaRepositorio.delete(estancia);
+        } else {
+            throw new ErrorServicio("No se encontro la estancia solicitada");
         }
     }
-    
-    
-    
-    private void validar(Date fechaDesde,Date fechaHasta,String huesped) throws ErrorServicio{
-        Date fechaActual=new Date(System.currentTimeMillis());
+
+    private void validar(Date fechaDesde, Date fechaHasta, String huesped) throws ErrorServicio {
+        Date fechaActual = new Date(System.currentTimeMillis());
         /*
         if (fechaDesde.compareTo(fechaActual)<0) {
             throw new ErrorService("La fecha de check-in no puede ser anterior a la fecha actual");
         }
-        */
-        
+         */
+
         if (fechaDesde.after(fechaHasta)) {
             throw new ErrorServicio("La fecha de check-in no puede ser posterior a la fecha de check-out");
         }
-        
-        if(huesped == null || huesped.isEmpty()){
+
+        if (huesped == null || huesped.isEmpty()) {
             throw new ErrorServicio("El huesped no puede estar vacio");
         }
-        
-        
+
     }
-    
-    
+
     public List<Estancia> listarEstancias(){
-        List<Estancia> estanciaS = estanciaRepositorio.ListarEstancias();
-        return estanciaS;
+        List<Estancia> estancias = estanciaRepositorio.ListarEstancias();
+        return estancias;
     }
+
     
     public Estancia listarEstancia(String id){
         Estancia estancia = estanciaRepositorio.buscarPorId(id);

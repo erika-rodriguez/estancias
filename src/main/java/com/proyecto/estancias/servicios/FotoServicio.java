@@ -63,4 +63,9 @@ public class FotoServicio {
         }
         return null;
     }
+
+    public Foto listarFoto(String id){
+        Foto foto = fotoRepositorio.buscarPorId(id);
+        return foto;
+    }
 }
