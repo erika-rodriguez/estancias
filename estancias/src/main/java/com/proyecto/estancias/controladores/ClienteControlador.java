@@ -1,9 +1,12 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.estancias.controladores;
 
-import com.proyecto.estancias.entidades.Casa;
-import com.proyecto.estancias.servicios.CasaServicio;
-import java.util.Date;
+import com.proyecto.estancias.entidades.Cliente;
+import com.proyecto.estancias.servicios.ClienteServicio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,21 +18,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/casa")
-public class CasaControlador {
+@RequestMapping("/cliente")
+public class ClienteControlador {
     @Autowired
-    private CasaServicio casaService;
+    private ClienteServicio clienteService;
 
-    @GetMapping("/nuevaCasa")
+    @GetMapping("/nuevoCliente")
     public String formulario() {
         return ".....html";
     }
 
     
-    @PostMapping("/nuevaCasa")
-    public String guardar(ModelMap modelo, @RequestParam String calle, @RequestParam int numero, @RequestParam String codPostal, @RequestParam String ciudad, @RequestParam String pais, @RequestParam Date fechaDesde, @RequestParam Date fechaHasta, @RequestParam int minDias, @RequestParam int maxDias, @RequestParam double precio, @RequestParam String tipoVivienda) {
+    @PostMapping("/nuevoCliente")
+    public String guardar(ModelMap modelo, @RequestParam String nombre, @RequestParam String calle, @RequestParam int numero, @RequestParam String codPostal, @RequestParam String ciudad, @RequestParam String pais, @RequestParam String email) {
         try {
-            casaService.agregarCasa(calle, numero, codPostal, ciudad, pais, fechaDesde, fechaHasta, minDias, maxDias, precio, tipoVivienda);
+            clienteService.agregarCliente(nombre, calle, numero, codPostal, ciudad, pais, email);
             modelo.put("exito", "Carga exitosa");
             return "......html";
         } catch (Exception e) {
@@ -40,9 +43,9 @@ public class CasaControlador {
     
     
     @PostMapping("/confirmarModificacion/{id}")
-    public String confirmarModificacion(ModelMap modelo, @PathVariable String calle, @PathVariable int numero, @PathVariable String codPostal, @PathVariable String ciudad, @PathVariable String pais, @PathVariable Date fechaDesde, @PathVariable Date fechaHasta, @PathVariable int minDias, @PathVariable int maxDias, @PathVariable double precio, @PathVariable String tipoVivienda) {
+    public String confirmarModificacion(ModelMap modelo, @PathVariable String nombre, @PathVariable String calle, @PathVariable int numero, @PathVariable String codPostal, @PathVariable String ciudad, @PathVariable String pais, @PathVariable String email) {
         try {
-            casaService.modificar(calle, numero, codPostal, ciudad, pais, fechaDesde, fechaHasta, minDias, maxDias, precio, tipoVivienda);
+            clienteService.modificar(nombre, calle, numero, codPostal, ciudad, pais, email);
             modelo.put("exito", "Modificación exitosa");
             return "redirect:/..../.......";
         } catch (Exception e) {
@@ -56,7 +59,7 @@ public class CasaControlador {
     @GetMapping("/modificar/{id}") //PATHVARIABLE
     public String modificar(@PathVariable String id, ModelMap modelo) {
 
-        modelo.put("casa", casaService.getOne(id));
+        modelo.put("cliente", clienteService.getOne(id));
 
         return ".........html";
     }
@@ -65,7 +68,7 @@ public class CasaControlador {
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable String id) {
         try {
-            casaService.eliminar(id);
+            clienteService.eliminar(id);
             return "redirect:/..../....";
         } catch (Exception e) {
             return ".....";
@@ -75,15 +78,15 @@ public class CasaControlador {
   
     @GetMapping("/listar")
     public String lista(ModelMap modelo) {
-        List<Casa> casas = casaService.listarCasas();
-        modelo.addAttribute("casas", casas);
+        List<Cliente> clientes = clienteService.listarClientes();
+        modelo.addAttribute("clientes", clientes);
         return ".....html";
     }
     @GetMapping("/listarParaReserva")
     public String listaParaPrestamo(ModelMap modelo) {
-        List<Casa> casas = casaService.listarCasas();
-        modelo.addAttribute("casas", casas);
-        return "form-libros-prestamo.html";
+        List<Cliente> clientes = clienteService.listarClientes();
+        modelo.addAttribute("clientes", clientes);
+        return ".......html";
     }
     
 }

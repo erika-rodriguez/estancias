@@ -13,10 +13,12 @@ public interface ClienteRepositorio extends JpaRepository<Cliente, String>{
     @Query("SELECT c FROM Cliente c WHERE c.email = :email")
     public Cliente buscarPorEmail(@Param("email") String email);
     
-    public Optional<Cliente> fyndByEmail(String email);
+  
     
     @Query("SELECT c FROM Cliente c WHERE c.nombre = :nombre")
     public Cliente buscarClienteNombre(String nombre);
+
+    public Optional<Cliente> findByEmail(String email);
     
     
 }

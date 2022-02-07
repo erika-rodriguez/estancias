@@ -23,7 +23,7 @@ public class ClienteServicio {
         validar(nombre, calle, numero, codPostal, ciudad, pais, email);
         Cliente cliente = new Cliente();
 
-        Optional<Cliente> respuesta = cr.fyndByEmail(email);
+        Optional<Cliente> respuesta = cr.findByEmail(email);
         if (respuesta.isPresent()) {
             Cliente cliente2 = respuesta.get();
             cliente.setNombre(cliente2.getNombre());
@@ -75,6 +75,7 @@ public class ClienteServicio {
         }
 
     }
+
 
     @Transactional
     public Cliente getOne(String id) {
@@ -129,7 +130,7 @@ public class ClienteServicio {
             throw new ErrorServicio("El nombre del Cliente no puede ser nulo");
 
         }
-        if (email == null || email.isEmpty()) {
+        if (calle == null || calle.isEmpty()) {
             throw new ErrorServicio("El e-mail del Cliente no puede ser nulo");
         }
         if (numero <= 0) {
