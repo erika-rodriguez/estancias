@@ -81,6 +81,7 @@ public class EstanciaServicio {
 
     }
 
+<<<<<<< HEAD
     public List<Estancia> listarEstancias() {
         List<Estancia> estanciaS = estanciaRepositorio.findAll();
         return estanciaS;
@@ -93,5 +94,16 @@ public class EstanciaServicio {
         }
         return null;
       
+=======
+    public List<Estancia> listarEstancias(){
+        List<Estancia> estancias = estanciaRepositorio.ListarEstancias();
+        return estancias;
+    }
+
+    
+    public Estancia listarEstancia(String id){
+        Estancia estancia = estanciaRepositorio.buscarPorId(id);
+        return estancia;
+>>>>>>> df7ac4c3501f2425b302f07f940816f76f04462c
     }
 }

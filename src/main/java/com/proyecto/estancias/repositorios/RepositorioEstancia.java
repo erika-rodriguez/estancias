@@ -21,7 +21,11 @@ import org.springframework.stereotype.Repository;
 public interface RepositorioEstancia extends JpaRepository<Estancia, String>{
 
   
+<<<<<<< HEAD
  /*
+=======
+ 
+>>>>>>> df7ac4c3501f2425b302f07f940816f76f04462c
     @Query("SELECT c FROM foto c where c.id = :id")
     public List<Estancia> ListarEstancias();
     
@@ -29,5 +33,9 @@ public interface RepositorioEstancia extends JpaRepository<Estancia, String>{
     @Query("SELECT c FROM foto c WHERE c.id = :id")
     public Estancia buscarPorId(@Param("id")String id);
 
+<<<<<<< HEAD
 */
+=======
+
+>>>>>>> df7ac4c3501f2425b302f07f940816f76f04462c
 }
