@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 com\proyecto\estancias\servicios\ComentarioServicio.class
 com\proyecto\estancias\entidades\Foto.class
 com\proyecto\estancias\repositorios\RepositorioEstancia.class
@@ -22,3 +23,5 @@ com\proyecto\estancias\controladores\CasaControlador.class
 com\proyecto\estancias\repositorios\RepositorioFoto.class
 com\proyecto\estancias\controladores\ComentarioControlador.class
 com\proyecto\estancias\entidades\Cliente.class
+=======
+>>>>>>> Stashed changes

@@ -29,6 +29,8 @@ public class Estancia {
     @DateTimeFormat (pattern ="yyyy-MM-dd")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaDesde;
+      @DateTimeFormat (pattern ="yyyy-MM-dd")
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date fechaHasta;
 
     public String getId() {
